@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="../css/profile.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            // Fetch user name
+            $.ajax({
+                url: '../php/getFirstName.php',
+                type: 'GET',
+                success: function(response) {
+                    $('#welcomeMessage').text("User Name: " + response);
+                },
+                error: function(xhr, status, error) {
+                    console.error(status + ': ' + error);
+                }
+            });
+            
+            // Fetch user email
+            $.ajax({
+                url: '../php/getEmail.php',
+                type: 'GET',
+                success: function(response) {
+                    $('#userEmail').text("Email: " + response);
+                },
+                error: function(xhr, status, error) {
+                    console.error(status + ': ' + error);
+                }
+            });
+    
+            // Event listener for sign-out
+            $('#signOutLink').click(function(e) {
+                e.preventDefault(); 
+                window.location.href = '../php/signOut.php';
+            });
+    
+            // Event listener for form submission
+            $('#editProfileForm').submit(function(e) {
+                e.preventDefault(); // Prevent the default form submission
+                
+                // Get form data
+                var formData = $(this).serialize();
+    
+                // Send form data to newProfile.php using AJAX
+                $.ajax({
+                    url: '../php/newProfile.php',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        // Display success message or handle response
+                        alert(response); // Alert the response from the server
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(status + ': ' + error);
+                        // Handle errors or display error message
+                        alert('Error updating profile');
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
+
+
+    
+</head>
+
+<body>
+
+    <div class="responsiveNav">
+        <ul>
+            <li><a href="../html/welcome.html">Home</a></li>
+            <li><a href="../html/sellingCars.html">Buy Car</a></li>
+            <li><a href="../html/rentingCars.html">Rent Car</a></li>
+            <li><a href="../html/profile.html">Profile</a></li>
+            <li><a href="../html/cart.html">Cart</a></li> <!-- Update the href for Cart -->
+        </ul>
+    </div>
+
+    <nav>
+        <button class="menu" id="menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <img src="../images/logo.png" alt="">
+        <div class="navItems">
+            <ul>
+                <li><a href="../html/welcome.html">Home</a></li>
+                <li><a href="../html/sellingCars.html">Buy Car</a></li>
+                <li><a href="../html/rentingCars.html">Rent Car</a></li>
+            </ul>
+        </div>
+        <div class="profile">
+            <a href="../html/cart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <a href="../html/profile.html">Profile</a>
+            <a id="signOutLink" href="../landing.html">Sign out</a>
+        </div>
+    </nav>
+
+    <div class="profileContainer">
+        <div class="content">
+            <div class="personalDetails">
+                <h2 id="userName"><div id="welcomeMessage">Loading...</div></h2>
+                <p id="userEmail">user@example.com</p>
+            </div>
+
+            <button id="editProfileBtn">Edit Profile</button>
+            
+            <form id="editProfileForm" class="editProfileForm" action="../php/updateProfile.php" method="POST">
+                <input type="text" id="editFirstName" name="editFirstName" placeholder="First Name" required>
+                <input type="text" id="editLastName" name="editLastName" placeholder="Last Name" required>
+                <input type="email" id="editEmail" name="editEmail" placeholder="Email" required>
+                <input type="password" id="editPassword" name="editPassword" placeholder="Password" required>
+                <input type="tel" id="editPhone" name="editPhone" placeholder="Phone Number" required>
+                <input type="text" id="editStreet" name="editStreet" placeholder="Street" required>
+                <input type="text" id="editCity" name="editCity" placeholder="City" required>
+                <select id="editProvince" name="editProvince" required>
+                    <option value="" disabled selected>Select your province</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="YT">Yukon</option>
+                </select>
+
+                <button id="submitEditBtn" type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var menuBtn = document.getElementById("menu");
+            var nav = document.querySelector(".responsiveNav");
+
+            function toggleNav() {
+                nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+            }
+
+            menuBtn.addEventListener("click", function (event) {
+                event.stopPropagation();
+                toggleNav();
+            });
+
+            document.addEventListener("click", function (event) {
+                if (event.target !== nav && event.target !== menuBtn && !nav.contains(event.target)) {
+                    nav.style.display = "none";
+                }
+            });
+
+            var editBtn = document.getElementById("editProfileBtn");
+            var editForm = document.getElementById("editProfileForm");
+            let haribahadur = "Edit Profile";
+
+            editBtn.addEventListener("click", function () {
+                editForm.style.display = "flex";
+                document.getElementById("editProfileBtn").innerHTML = "Double click to Hide";
+            });
+            editBtn.addEventListener("dblclick", function () {
+                editForm.style.display = "none";
+                document.getElementById("editProfileBtn").innerHTML = haribahadur;
+            });
+        });
+    </script>
+</body>
+
+</html>

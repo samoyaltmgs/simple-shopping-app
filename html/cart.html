@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( ".widget input[type=submit], .widget a, .widget button" ).button();
+      $( "button, input, a" ).on( "click", function( event ) {
+        event.stopPropagation();
+      } )
+    } );
+    </script>
+</head>
+
+<body>
+
+    <div class="responsiveNav">
+        <ul>
+            <li><a href="../html/welcome.html">Home</a></li>
+            <li><a href="../html/sellingCars.html">Buy Car</a></li>
+            <li><a href="../html/rentingCars.html">Rent Car</a></li>
+            <li><a href="../html/profile.html">Profile</a></li>
+            <li><a href="../html/cart.html">Cart</a></li>
+            <li><a href="../html/ourStore.html">Our Store</a></li>
+            <li><a href="../html/buyInsurance.html">Buy Insurance</a></li>
+        </ul>
+    </div>
+
+    <nav>
+        <button class="menu" id="menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <img src="../images//logo.png" alt="">
+        <div class="navItems">
+            <ul>
+                <li><a href="../html/welcome.html">Home</a></li>
+                <li><a href="../html/sellingCars.html">Buy Car</a></li>
+                <li><a href="../html/rentingCars.html">Rent Car</a></li>
+            </ul>
+        </div>
+        <div class="profile">
+            <a href="../html/cart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <a href="../html/profile.html">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+        </div>
+        <div id="moremore">
+            <a href="../html/ourStore.html">Our Store</a>
+            <a href="../html/buyInsurance.html">Buy Insurance</a>
+        </div>
+        
+    </nav>
+
+    <h1 style="text-align: center; margin-top: 5%;">Your Cart</h1>
+
+    <div class="cart-items" style="text-align: center;">
+        <p>Vehicle name: <span id="vehicle">____</span> </p>
+        <p >Rate: <span id="rate">--/day</span></p>
+    </div>
+
+    <div class="cart-summary widget">
+        <p>Subtotal: <span id="subtotal">0.00</span></p>
+        <p>Tax (estimated): <span id="tax">0.00</span></p>
+        <p>Total: <span id="total">0.00</span></p>
+        <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/welcome.js"></script>
+</body>
+
+</html>

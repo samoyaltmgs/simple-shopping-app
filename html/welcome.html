@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../css/welcome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $.ajax({
+              url: '../php/getFirstName.php',
+              type: 'GET',
+              success: function(response) {
+                  $('#welcomeMessage').text('Welcome, ' + response);
+              },
+              error: function(xhr, status, error) {
+                console.error(status + ': ' + error);
+              }
+            });
+          });
+          console.log(response);
+    </script>
+</head>
+
+<body>
+
+    <div class="responsiveNav">
+        <ul>
+            <li><a href="../html/welcome.html">Home</a></li>
+            <li><a href="../html/sellingCars.html">Buy Car</a></li>
+            <li><a href="../html/rentingCars.html">Rent Car</a></li>
+            <li><a href="../html/profile.html">Profile</a></li>
+            <li><a href="../html/cart.html">Cart</a></li>
+        </ul>
+    </div>
+
+    <nav>
+        <button class="menu" id="menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="welcome.html"><img src="../images/logo.png" alt=""></a>
+        <div class="navItems">
+            <ul>
+                <li><a href="../html/welcome.html">Home</a></li>
+                <li><a href="../html/sellingCars.html">Buy Car</a></li>
+                <li><a href="../html/rentingCars.html">Rent Car</a></li>
+            </ul>
+        </div>
+        <div class="profile">
+          <a href="../html/cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+            <a href="../html/profile.html">
+                <i class="fa-solid fa-user"></i>
+                <div id="welcomeMessage">Loading...</div>
+            </a>
+
+            
+        </div>
+    </nav>
+
+
+    <section class="container">
+
+      <div class="slide">
+        <div class="item" style="background-image: url(../images/Mercedes-Benz.jpg);">
+  
+          <div class="overlay"></div>
+          <div class="content">
+  
+            <div class="name">
+              Mercedes-Benz
+            </div>
+            <div class="desc">
+              Synonymous with luxury, innovation, and engineering excellence!
+            </div>
+            <button>See more</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(../images/tesla.avif);">
+  
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="name">
+              Tesla Model S
+            </div>
+            <div class="desc">
+              Redefining driving with electric power, performance, and futuristic design!
+            </div>
+            <button>See more</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(../images/Porsche\ 911.jpg);">
+  
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="name">
+              Porsche 911
+            </div>
+            <div class="desc">
+              The epitome of performance and timeless elegance.!
+            </div>
+            <button>See more</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(../images/Toyota\ RAV4.avif);">
+          <div class="overlay"></div>
+          <div class="content">
+  
+            <div class="name">
+              Toyota RAV4
+            </div>
+            <div class="desc">
+              A benchmark in reliability, comfort, and fuel efficiency!
+            </div>
+            <button>See more</button>
+          </div>
+        </div>
+      </div>
+      <div class="button">
+        <button class="prev">
+          <i class="fa-solid fa-arrow-left-long"></i>
+        </button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </section>
+  
+  
+  
+    <div class="searchBar">
+      <input type="text" placeholder="Search for cars..">
+      <button class="searchBtn">Search</button>
+    </div>
+  
+  
+    <h1 class="heading">Top Selling Cars</h1>
+    <section class="topSelling">
+      <div class="car">
+        <img src="../images//fordF.jpg" alt="">
+        <div class="details">
+          <h1> <a href="">Ford F-Series</a> </h1>
+          <p></p>
+          <p>1500$</p>
+  
+          <div class="carBtn">
+            <button class="addCrt" id="addCart">
+              Add to cart
+            </button>
+            <button class="buy">
+              Buy Now
+            </button>
+          </div>
+          <div id="availableCars">Available cars: <span id="carsCount">10</span></div>
+          <div>
+            <p>Features</p>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+            <ul class="features">
+              <li>Available Platinum® Plus (703A)</li>
+              <li>3.5L EcoBoost® V6 with Auto Start-Stop Technology</li>
+              <li>Available 3.5L PowerBoost® Full Hybrid V6 Engine</li>
+              <li>Pro Access Tailgate (Pro Access tailgate available late spring)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="car">
+        <img src="../images/car (1).jpg" alt="">
+        <div class="details">
+          <h1> <a href="">Porsche Panamera</a> </h1>
+          <p></p>
+          <p>1900$</p>
+  
+          <div class="carBtn">
+            <button class="addCrt" id="addCart1">
+              Add to cart
+            </button>
+            <button class="buy">
+              Buy Now
+            </button>
+          </div>
+          <div id="availableCars1">Available cars: <span id="carsCount1">10</span></div>
+          <div>
+            <p>Features</p>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+            <ul class="features">
+              <li>Volcano Grey Metallic</li>
+              <li>Premium Package Plus</li>
+              <li>Comfort Access</li>
+              <li>Seat Heating (Front and Rear)</li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="car">
+        <img src="../images/car (2).jpg" alt="">
+        <div class="details">
+          <h1> <a href="">Nissan Pathfinder</a> </h1>
+          <p></p>
+          <p>1500$</p>
+  
+          <div class="carBtn">
+            <button class="addCrt" id="addCart2">
+              Add to cart
+            </button>
+            <button class="buy">
+              Buy Now
+            </button>
+          </div>
+          <div id="availableCars2">Available cars: <span id="carsCount2">10</span></div>
+          <div>
+            <p>Features</p>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+            <ul class="features">
+              <li>Intelligent 4x4 with Terrain Mode Selector</li>
+              <li>Tri-Zone Automatic Temperature Control</li>
+              <li>Intelligent Cruise Control</li>
+              <li>Intelligent Around View® Monitor</li>
+              
+          </ul>
+          </div>
+        </div>
+      </div>
+      <div class="car">
+        <img src="../images/car (4).jpg" alt="">
+        <div class="details">
+          <h1> <a href="">Jeep Grand Cherokee</a> </h1>
+          <p></p>
+          <p>1500$</p>
+  
+          <div class="carBtn">
+            <button class="addCrt" id="addCart3">
+              Add to cart
+            </button>
+            <button class="buy">
+              Buy Now
+            </button>
+          </div>
+          <div id="availableCars3">Available cars: <span id="carsCount3">10</span></div>
+          <div>
+            <p>Features</p>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+            <ul class="features">
+              <li>Available Quadra-Lift® Air Suspension System</li>
+              <li>Uconnect® 5 NAV with 10.1-Inch Touchscreen</li>
+              <li>Apple CarPlay® and Android Auto™ Integration</li>
+              <li>Available Selec-Terrain® Traction Management System</li>
+              
+          </ul>
+          
+          </div>
+        </div>
+      </div>
+  
+    </section>
+  
+    <h1 class="heading">Top Renting Cars</h1>
+    <section class="topSelling">
+      <div class="car">
+        <img src="../images/car (5).jpg" alt="">
+        <div class="details">
+          <h1> <a href="">Mercedes EQE 350</a> </h1>
+          <p></p>
+          <p>120$</p>
+  
+          <div class="carBtn">
+            <button class="addCrt">
+              Book Now
+            </button>
+            <button class="buy">
+              Rent Now
+            </button>
+          </div>
+          <div>
+            <p>Features</p>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+            <ul class="features">
+              <li>MBUX Hyperscreen</li>
+              <li>ENERGIZING Comfort Control</li>
+              <li>Augmented Reality Head-Up Display</li>
+              <li>AMG Line Exterior and Interior</li>
+              
+          </ul>
+          
+          </div>
+        </div>
+      </div>
+      <div class="car">
+        <img src="../images/car (6).jpg" alt="">
+        <div class="details">
+          <h1> <a href="">Audi Q6</a> </h1>
+          <p></p>
+          <p>190$</p>
+  
+          <div class="carBtn">
+            <button class="addCrt">
+              Book Now
+            </button>
+            <button class="buy">
+              Rent Now
+            </button>
+          </div>
+          <div>
+            <p>Features</p>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+            <ul class="features">
+              <li>Quattro® All-Wheel Drive System</li>
+              <li>MMI® touch response system with dual displays</li>
+              <li>Audi Virtual Cockpit Plus</li>
+              <li>Available Bang & Olufsen® Premium 3D Sound System</li>
+              
+          </ul>
+          
+          </div>
+        </div>
+      </div>
+      <div class="car">
+        <img src="../images/car (7).jpg" alt="">
+        <div class="details">
+          <h1> <a href="">Hyundai Palisade</a> </h1>
+          <p></p>
+          <p>150$</p>
+  
+          <div class="carBtn">
+            <button class="addCrt">
+              Book Now
+            </button>
+            <button class="buy">
+              Rent Now
+            </button>
+          </div>
+          <div>
+            <p>Features</p>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+            <ul class="features">
+              <li>8-inch touchscreen display audio system</li>
+              <li>Apple CarPlay® and Android Auto™ compatibility</li>
+              <li>Hyundai SmartSense safety suite</li>
+              <li>One-touch 2nd-row seat access</li>
+              
+          </ul>
+          
+          </div>
+        </div>
+      </div>
+      <div class="car">
+        <img src="../images/car (8).jpg" alt="">
+        <div class="details">
+          <h1> <a href="">Honda Accord</a> </h1>
+          <p></p>
+          <p>180$</p>
+  
+          <div class="carBtn">
+            <button class="addCrt">
+              Book Now
+            </button>
+            <button class="buy">
+              Rent Now
+            </button>
+          </div>
+          <div>
+            <p>Features</p>
+            <button class="show">show</button>
+            <button class="hide">hide</button>
+            <ul class="features">
+              <li>Honda Sensing® suite of safety and driver-assistive technologies</li>
+              <li>Apple CarPlay® and Android Auto™ integration</li>
+              <li>Multi-angle rearview camera with dynamic guidelines</li>
+              <li>Smart Entry with Walk Away Auto Lock®</li>
+          </ul>          
+          </div>
+        </div>
+      </div>
+  
+    </section>
+  
+  
+  
+  
+  
+  
+    <footer>
+      <div class="footerLeft">
+        <img src="../images//logo.png" alt="">
+        <p>Your Car, Your Journey</p>
+      </div>
+      <div class="footerRight">
+        <div class="footerUpper">
+          <ul>
+            <li>About Us</li>
+            <li>How it works</li>
+            <li>Services</li>
+            <li>Contact</li>
+            <li>Why us?</li>
+            <li><a href="../html/register.html">sign up</a></li>
+            <li><a href="../html/ourStore.html">Our Store</a></li>
+            <li><a href="../html/buyInsurance.html">Buy Insurance</a></li>
+          </ul>
+        </div>
+  
+  
+        <div class="footerLower">
+  
+        </div>
+      </div>
+      <div class="socials">
+        <p>Follow us on our social medias</p>
+        <div class="icons">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-discord"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+  
+  
+    </footer>
+  
+  
+    <script>
+      
+  
+  
+  
+   document.addEventListener("DOMContentLoaded", function () {
+              var menuBtn = document.getElementById("menu");
+              var nav = document.querySelector(".responsiveNav");
+  
+  
+              function toggleNav() {
+                  if (nav.style.display === "flex") {
+                      nav.style.display = "none";
+                  } else {
+                      nav.style.display = "flex";
+                  }
+              }
+  
+           
+              menuBtn.addEventListener("click", function (event) {
+                  event.stopPropagation(); 
+                  toggleNav();
+              });
+  
+          
+              document.addEventListener("click", function (event) {
+                  if (event.target !== nav && event.target !== menuBtn && !nav.contains(event.target)) {
+                      nav.style.display = "none";
+                  }
+              });
+          });
+     
+    </script>
+    <script>
+      $(document).ready(function() {
+      // Show features when "Show Features" button is clicked
+      $(".show").click(function() {
+        $(".features").slideDown();
+      });
+    
+      // Hide features when "Hide Features" button is clicked
+      $(".hide").click(function() {
+        $(".features").slideUp();
+      });
+    });
+    </script>
+    
+    <script src="../js/slider.js"></script>
+    <script src="../js/welcome.js"></script>
+  </body>
+  
+  </html>

@@ -1,0 +1,20 @@
+{
+    "directions": [
+      {
+        "location": "Our Location(Luxewheels)",
+        "lat": 43.773094548041726,
+        "lng": -79.33577216870982
+      },
+      {
+        "location": "Don Mills Station",
+        "lat":  43.77586546722156,
+        "lng": -79.34522997100521
+      },
+      {
+        "location": "Bluffer's Beach Park",
+        "lat": "43.71560592215805",
+        "lng": "-79.22525609977924"
+      }
+    ]
+  }
+  

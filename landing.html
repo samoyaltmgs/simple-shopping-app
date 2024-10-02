@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+   <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <style>
+        #div-map{
+            height: 650px;
+            width: 100%;
+        }
+    #map{
+        height: 500px;
+        width: 100%;
+    }
+    </style>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/landing.js"></script>
+    
+</head>
+
+<body>
+    <nav>
+        <div class="background">
+
+        </div>
+        <button class="menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+
+        <img src="images//logo.png" alt="">
+        <div class="navItems">
+            <ul>
+
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <button class="loginBtn"><a href="html/login.html">login</a></button>
+            <button class="signupBtn"><a href="html/register.html">sign up</a></button>
+        </div>
+    </nav>
+
+    <section class="home">
+
+        <div class="homeTxt">
+            <h1>The Open Road Awaits</h2>
+                <p>Your Car, Your Journey</p>
+        </div>
+        <img src="images//homeImage.jpg" alt="">
+    </section>
+
+
+    <section class="services">
+        <h1>Our Services</h1>
+
+        <div class="servicesContainer">
+            <div class="service">
+                <img src="images//rental.jpg" alt="">
+                <h4>Car rental</h4>
+                <p>We provide best car rental services. At very reasonable and cheap price.</p>
+            </div>
+            <div class="service">
+                <img src="images//rental.jpg" alt="">
+                <h4>Car rental</h4>
+                <p>We provide best car rental services. At very reasonable and cheap price.</p>
+            </div>
+            <div class="service">
+                <img src="images//rental.jpg" alt="">
+                <h4>Car rental</h4>
+                <p>We provide best car rental services. At very reasonable and cheap price.</p>
+            </div>
+            <div class="service">
+                <img src="images//rental.jpg" alt="">
+                <h4>Car rental</h4>
+                <p>We provide best car rental services. At very reasonable and cheap price.</p>
+            </div>
+
+        </div>
+    </section>
+    
+    <h1 style="margin-top: 80px;margin-left: 40px;">About Us</h1>
+    
+    <section class="aboutus">
+
+
+        <div class="statsContainer">
+            <div class="stats">
+                <h1>2M + Customers</h1>
+            </div>
+            <div class="stats">
+                <h1>10M+ cars Sold</h1>
+            </div>
+            <div class="stats">
+                <h1>50M + cars rented</h1>
+            </div>
+        </div>
+        <div id="div-map">
+            <h1>Our Location</h1>
+            <div id="map"></div>
+        </div>
+        
+    </section>
+    <section class="contact">
+        <h1>Contact</h1>
+        <div class="contactContainer">
+
+            <form action="" class="contactForm">
+                <h2>We'd love to hear from you!...</h2>
+                <h3>Dive into our world of creativity and fun—don't hesitate to reach out and connect with us!</h3>
+
+
+                <input type="text" placeholder="Full name">
+                <input type="text" placeholder="Email">
+                <textarea name="" id="" cols="30" rows="10"
+                    placeholder="Enter your valueable message here.."></textarea>
+                <button class="contactBtn">Submit</button>
+            </form>
+            <img src="images//contact.jpg" alt="">
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footerLeft">
+            <img src="images//logo.png" alt="">
+            <p>Your Car, Your Journey</p>
+        </div>
+        <div class="footerRight">
+            <div class="footerUpper">
+                <ul>
+                    <li>About Us</li>
+                    <li>How it works</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                    <li>Why us?</li>
+                    <li>signup</li>
+                </ul>
+            </div>
+
+
+            <div class="footerLower">
+
+            </div>
+        </div>
+        <div class="socials">
+            <p>Follow us on our social medias</p>
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-discord"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+
+
+    </footer>
+    
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+1. Setting Up and Navigating the Website:
+
+1.1 Unzipping the File:
+
+Please start by unzipping the file provided to you. This file contains all the necessary components for the website.
+
+1.2 Put folder Into correct directory:
+
+Put Project folder into the htdocs folder of XAMPP. your directory should look like C:\xampp\htdocs\project.
+
+1.3 Building the Database:
+
+Once the file is unzipped, you will find a file named "jQForms.sql" inside.
+Use this SQL file to create a database. If you're using XAMPP, start the Apache and MySQL services.
+Access phpMyAdmin and import the "jQForms.sql" file to create the database needed for the website.
+
+1.4 Accessing the Website Locally:
+
+After setting up the database, you can access the website locally through your web browser using localhost.
+
+2. Navigation on the Website:
+
+The initial landing page is "landing.html." Here, you can find links to sign up, log in, and explore sections like "About Us" and "Contact Us."
+
+3. Signing Up and Logging In:
+
+For first-time users, signing up with personal information is necessary before accessing the website's features.
+After signing up, you can log in to access the main functionalities.
+
+4. Exploring Content:
+
+The website offers two main sections: "Buy Car" and "Rent Car." Users can navigate to these sections based on their preferences.
+Upon selecting a car, proceed to the cart section for checkout.
+
+5. Managing User Profile:
+
+Users can view and manage their profiles by clicking on the "Profile" option located in the top-left corner of the page.
+From the profile page, users can edit their details as needed.
+
+6. Accessing Additional Features:
+
+At the bottom of the website, in the footer section, there are links to access contact details, social media, store, and insurance sections.
+
+7. Logging Out:
+
+To log out, users can simply navigate to the profile section and click on the "Logout" option.

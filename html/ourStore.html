@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Website with Products</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .product img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        .product-details {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <a href="../html/welcome.html"><p id="return" style="text-align: right; margin-right: 100px;">Return Home</p></a>
+    <div class="container">
+        <h1>Here you can find the products you may need</h1>
+        <div class="widget">
+            <h2>Check our Products</h2>
+            <div id="accordion">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var products = [
+            { name: "Car Tires", image: "../images/tire.jpg", price: "$200", status: "Buy now" },
+            { name: "Exhaust Air Filter", image: "../images/filter.png", price: "$50" , status: "Buy now"},
+            { name: "Wrench", image: "../images/wrench.jpg", price: "$15" , status: "Buy now" },
+            { name: "Rear View Mirror", image: "../images/mirror.jpg", price: "$10" , status: "Buy now" }
+        ];
+
+        function displayProductsInAccordion() {
+            var accordion = $("#accordion");
+            products.forEach(function(product, index) {
+                var productHTML = `
+                    <h3>${product.name}</h3>
+                    <div>
+                        <div class="product">
+                            <img src="${product.image}" alt="${product.name}">
+                            <div class="product-details">
+                                <p>Price: ${product.price}</p>
+                            </div>
+                            <p>${product.status}</p>
+                        </div>
+                    </div>
+                `;
+                accordion.append(productHTML);
+            });
+            accordion.accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content"
+            });
+        }
+
+        $(document).ready(function() {
+            displayProductsInAccordion();
+        });
+    </script>
+</body>
+</html>

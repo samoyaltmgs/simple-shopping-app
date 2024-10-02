@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Car Insurance</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .widget {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../html/welcome.html"><p id="return" style="text-align: right; margin-right: 100px;">Return Home</p></a>
+    <div class="container">
+        <h1>Rental Car Insurance</h1>
+        <div class="widget">
+            <h2>Date Range Picker</h2>
+            <label for="rentalDates">Select Rental Dates:</label>
+            <input type="text" id="rentalDates" readonly>
+        </div>
+        <div class="widget">
+            <h2>Insurance Options</h2>
+            <div id="insuranceOptions">
+                <input type="checkbox" id="basicInsurance" name="insurance" value="Basic">
+                <label for="basicInsurance">Basic Insurance ($50)</label><br>
+                <input type="checkbox" id="premiumInsurance" name="insurance" value="Premium">
+                <label for="premiumInsurance">Premium Insurance ($100)</label><br>
+            </div>
+        </div>
+        <div class="widget">
+            <h2>Submit Button</h2>
+            <button id="submitBtn">Get Insurance Quote</button>
+        </div>
+        <div class="widget" id="quoteResult" style="display: none;">
+            <h2>Insurance Quote</h2>
+            <p id="quoteText"></p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#rentalDates").datepicker({
+                dateFormat: "yy-mm-dd",
+                onSelect: function(selectedDate) {
+                    var endDate = $("#rentalDates").datepicker("getDate");
+                    endDate.setDate(endDate.getDate() + 1);
+                    $("#rentalDates").datepicker("option", "minDate", selectedDate);
+                    $("#rentalDates").datepicker("option", "maxDate", endDate);
+                }
+            });
+
+            $("#submitBtn").click(function() {
+                var startDate = $("#rentalDates").datepicker("getDate");
+                var endDate = new Date(startDate);
+                endDate.setDate(endDate.getDate() + 1);
+                var basicInsurance = $("#basicInsurance").is(":checked");
+                var premiumInsurance = $("#premiumInsurance").is(":checked");
+                var quote = 0;
+
+                if (basicInsurance) {
+                    quote += 50;
+                }
+                if (premiumInsurance) {
+                    quote += 100;
+                }
+
+                $("#quoteText").text("Your insurance quote for " + startDate.toLocaleDateString() + " - " + endDate.toLocaleDateString() + " is: $" + quote);
+                $("#quoteResult").show();
+            });
+        });
+    </script>
+    <script src="../js/jsValidation.js"></script>
+</body>
+</html>

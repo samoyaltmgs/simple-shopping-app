@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Truculenta", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login input {
+  width: 180px;
+  height: 25px;
+  padding: 5px 10px;
+  border: 1px solid #00b4d8;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.login input::placeholder {
+  color: black;
+  font-size: 16px;
+}
+
+.login button {
+  width: fit-content;
+  padding: 5px 20px;
+  margin: auto;
+  background: #00b4d8;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.login a{
+    color: #00b4d8;
+    
+}

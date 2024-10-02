@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+
+<body>
+    <div style="height: 20px; width: auto;"></div>
+
+    <form id="register" class="register" action="../php/jQFormsAddUser.php" method="POST">
+        <div class="input-container">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First name" maxlength="45" title="Enter your first name here.">
+        </div>
+
+        <div class="input-container">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last name" maxlength="45" title="Enter your last name here">
+        </div>
+
+        <div class="input-container">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        </div>
+
+        <div class="input-container">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone number">
+        </div>
+
+        <div class="input-container">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" minlength="8">
+        </div>
+
+        <div class="input-container">
+            <label for="retypePassword">Re-type Password:</label>
+            <input type="password" id="retypePassword" name="retypePassword" placeholder="Re-type password" minlength="8">
+        </div>
+
+        <div class="input-container">
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" pattern="\d{4}-\d{2}-\d{2}" title="Please enter a date in the format YYYY-MM-DD" min="1900-01-01" max="2015-12-31" required>
+
+        </div>
+
+        <div class="input-container">
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" placeholder="Street">
+        </div>
+
+        <div class="input-container">
+            <label for="province">Province:</label>
+            <select id="province" name="province">
+                <option value="" disabled selected>Select your province</option>
+                <option value="AB">Alberta</option>
+                <option value="BC">British Columbia</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">New Brunswick</option>
+                <option value="NL">Newfoundland and Labrador</option>
+                <option value="NS">Nova Scotia</option>
+                <option value="NT">Northwest Territories</option>
+                <option value="NU">Nunavut</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">Prince Edward Island</option>
+                <option value="QC">Quebec</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="YT">Yukon</option>
+            </select>
+        </div>
+
+        <div class="input-container">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="City">
+        </div>
+
+        <button id="submit" class="registerBtn" type="submit">Register</button>
+        <p>Already have an account? <a href="../html/login.html">Login</a></p>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+
+</html>
